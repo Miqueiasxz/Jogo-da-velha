@@ -1,23 +1,23 @@
-// Pega o botão
+// Botão
 const button = document.querySelector("button");
-// Pega os pontos dos jogadores pra mostrar
+// Pegar os dados da pontuação para mostrar
 const player1Score = document.querySelector("#pontos_player_1");
 const player2Score = document.querySelector("#pontos_player_2");
-// pega a placa principal
+//Placa principal
 const board = document.querySelector("#tabuleiro");
 const cells = document.querySelectorAll(".casa");
 
-// cria um array com 9 posições
+// Array com 9 posições
 let gameArray = new Array(9);
-// cria uma variável pra salvar o turno do jogador
+// Variável pra salvar o turno do jogador
 let playerTurn = 1;
-// cria uma variável pra salvar os pontos do jogador
+// Variável pra salvar os pontos do jogador
 let player1Points = 0;
 let player2Points = 0;
 
 
 
-// cria uma função para preencher o array com X ou O
+// Função para preencher o array com X ou O
 function fillArray(position) {
   if (playerTurn === 1) {
     gameArray[position] = "X";
@@ -30,7 +30,7 @@ function fillArray(position) {
 
 
 
-// cria uma função para verificar se o jogo acabou
+// Função para verificar se o jogo acabou
 function checkGameOver() {
   if (checkWin()) {
     if (playerTurn !== 1) {
@@ -61,7 +61,7 @@ function checkGameOver() {
   }
 }
 
-// cria a função para verificar se o jogo acabou com uma vitória
+// Função para verificar se o jogo acabou com uma vitória
 function checkWin() {
   if (
     gameArray[0] === gameArray[1] &&
@@ -116,7 +116,7 @@ function checkWin() {
   }
 }
 
-// cria uma função para verificar se o jogo acabou com um empate
+// Função para verificar se o jogo acabou com um empate
 function checkDraw() {
   let draw = true;
   for (let i = 0; i < gameArray.length; i++) {
@@ -127,7 +127,7 @@ function checkDraw() {
   return draw;
 }
 
-// cria uma função para limpar o jogo
+// Função para limpar o jogo
 function clearGame() {
   gameArray = new Array(9);
   playerTurn = 1;
@@ -138,7 +138,7 @@ function clearGame() {
   }
 }
 
-// cria uma função para iniciar o jogo
+// Função para iniciar o jogo
 function startGame() {
   
   for (let i = 0; i < cells.length; i++) {
@@ -160,10 +160,10 @@ function startGame() {
   }
 }
 
-// inicia o jogo
+// Onde o jogo começa
 startGame();
 
-// reinicia o jogo
+// Resetar o jogo
 button.addEventListener("click", function () {
   clearGame();
 });
